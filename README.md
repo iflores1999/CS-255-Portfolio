@@ -1,93 +1,92 @@
-# CS-255 System Analysis and Design Portfolio
+# CS-255 DriverPass System Analysis & Design
 
-## DriverPass Project
+Portfolio for CS-255 System Analysis and Design
 
-### Project Overview
-This repository contains my work from CS-255 System Analysis and Design, showcasing my ability to gather business requirements, analyze user needs, and design comprehensive system solutions.
-
----
+## Project Overview
+This repository contains system analysis and design documentation for DriverPass, a comprehensive driver training platform designed to improve DMV exam pass rates through online practice tests and in-person driving lessons.
 
 ## Repository Contents
 
-- **Business Requirements Document** - Analysis of client needs and system requirements gathered from stakeholder interviews
-- **System Design Document** - Complete UML diagrams and technical specifications for the DriverPass system
-- **UML Diagrams** - Use case, activity, sequence, and class diagrams illustrating system design
+### Business Requirements Document
+**File**: `Business-Requirements-Document.docx`
+
+Comprehensive requirements analysis including:
+- System Purpose & Background
+- Goals & Objectives (5 goals with measurable objectives)
+- Functional Requirements
+- Nonfunctional Requirements (Performance, Security, Platform Constraints)
+- User Interface Requirements for 5 user roles
+- Assumptions & Limitations
+- Project Gantt Chart (Jan 22 - May 10, 2024)
+
+### System Design Document
+**File**: `System-Design-Document.docx`
+
+Technical design specifications including:
+- System Design Overview
+- UML Diagrams (Use Case, Activity, Sequence, Class)
+- Technical Architecture
+- Design Constraints
+- System Recommendations
+
+## Reflection
+
+### Briefly summarize the DriverPass project. Who was the client? What type of system did they want you to design?
+
+The client was DriverPass, a new company founded by Liam that provides driver training services. They wanted a comprehensive web-based system combining online DMV practice tests with in-person driving lesson reservations. The system needed to address the low 46% DMV exam pass rate by providing better preparation through online practice tests, professional driving instruction, and up-to-date content synchronized with DMV requirements. Key requirements included automated reservation management for 10 cars and 10 instructors, three tiered service packages (Basic: $199/30 days, Intermediate: $449/60 days, Premium: $799/90 days), role-based access for five user types (customers, secretary, instructors, IT officer, owner), and cloud-based infrastructure ensuring 24/7 availability.
+
+### What did you do particularly well?
+
+I excelled at translating interview insights into detailed technical requirements by creating comprehensive UML diagrams that effectively communicated system interactions to both technical and non-technical stakeholders. My functional requirements used precise "The system shall..." statements that were measurable and testable. The Gantt chart accurately captured the 110-day project timeline with all 12 tasks from the interview transcript, showing clear dependencies and resource allocation. I also successfully balanced technical constraints with business needs, particularly in designing role-based access controls and ensuring security compliance (PCI DSS, SSL/TLS encryption) while maintaining user-friendly interfaces tailored to each user type's specific workflows and needs.
+
+### If you could choose one part of your work on these documents to revise, what would you pick? How would you improve it?
+
+I would revise the nonfunctional requirements section to include more specific quantitative metrics and success criteria. While I specified "page load times <2 seconds" and "99.9% uptime," I would add more detailed performance benchmarks such as database query response times (<100ms for simple queries, <500ms for complex reports), API endpoint latency targets, concurrent user session limits with specific auto-scaling thresholds (e.g., scale up at 80% capacity), and detailed failover/disaster recovery procedures with RTO (Recovery Time Objective) and RPO (Recovery Point Objective) specifications. I would also expand the security section to include specific penetration testing schedules, vulnerability scanning procedures, and incident response protocols with defined SLAs for different severity levels.
+
+### How did you interpret the user's needs and implement them into your system design? Why is it so important to consider the user's needs when designing?
+
+I interpreted user needs by carefully analyzing the interview transcript to identify pain points and workflows for each user role. For customers, I designed self-service booking capabilities and 24/7 practice test access because the interview revealed they need flexibility and convenience. For the secretary, I created streamlined reservation management tools optimized for phone and walk-in support since she handles customer service. For instructors, I designed a mobile-optimized interface for schedule viewing and lesson notes because they need on-the-go access. For the IT officer (Ian), I included comprehensive administrative controls, user management, and security monitoring. For the owner (Liam), I designed business intelligence dashboards with revenue analytics and performance metrics. Considering user needs is critical because a technically perfect system that doesn't match how users actually work will fail in practice—the 46% pass rate problem can only be solved if students actually use the practice tests and complete their driving lessons, which requires interfaces designed around their workflows, motivations, and technical skill levels.
+
+### How do you approach designing software? What techniques or strategies would you use in the future to analyze and design a system?
+
+My approach follows user-centered design principles: (1) **Requirements Gathering** - conducting stakeholder interviews and analyzing business processes to understand problems before proposing solutions; (2) **UML Modeling** - creating use case, activity, sequence, and class diagrams to visualize system interactions and structure before writing code; (3) **Iterative Refinement** - starting with high-level architecture and progressively adding detail based on feedback; (4) **Constraint Analysis** - identifying technical, business, and regulatory constraints early to avoid costly redesigns. In future projects, I would incorporate rapid prototyping and user testing earlier in the design phase to validate assumptions, use established design patterns more explicitly to solve common problems (MVC, Repository, Factory patterns), conduct security threat modeling during design rather than as an afterthought, and create detailed API specifications alongside UML diagrams to ensure frontend-backend alignment. I would also implement more robust traceability matrices linking requirements to design elements to test cases, ensuring every requirement is addressed and testable.
+
+## Key System Features
+
+- **Online Practice Tests**: 500+ DMV-aligned questions with automated scoring and progress tracking
+- **Reservation Management**: Real-time scheduling for driving lessons with instructor and vehicle assignment
+- **Tiered Service Packages**: Three levels to meet different customer needs and budgets
+- **Role-Based Access Control**: Five distinct user types with appropriate permissions
+- **Cloud Infrastructure**: Scalable, secure hosting with 99.9% uptime guarantee
+- **DMV Content Synchronization**: Automatic updates within 48 hours of regulatory changes
+- **Multi-Channel Access**: Online, phone, and in-person reservation options
+- **Business Analytics**: Comprehensive reporting for owner decision-making
+
+## Technical Specifications
+
+- **Platform**: Cloud-based web application (AWS/Azure/GCP)
+- **Access**: Responsive browser-based interface (mobile and desktop)
+- **Security**: PCI DSS Level 1 compliant, SSL/TLS encryption, multi-factor authentication
+- **Database**: Relational database (PostgreSQL/MySQL) for structured data storage
+- **Integration**: Payment gateway (Stripe/PayPal), Email/SMS notifications (SendGrid/Twilio), DMV content API
+
+## Project Timeline
+
+- **Duration**: January 22, 2024 - May 10, 2024 (110 days)
+- **Key Phases**:
+  - Requirements Gathering: 14 days
+  - System Design: 23 days
+  - Development: 52 days
+  - Testing: 11 days
+  - Deployment: 4 days
+
+## Course Information
+
+- **Course**: CS-255 System Analysis and Design
+- **Institution**: Southern New Hampshire University
+- **Student**: Isela Flores
+- **Email:**: isela.flores@snhu.edu
 
 ---
 
-## Project Reflection
-
-### Project Summary
-
-The DriverPass project was designed for a driver training company seeking to improve student success rates on driving exams. The client, represented by the owner Liam and IT officer Ian, wanted a comprehensive web-based system that would provide students with both online practice tests and in-person driving lesson scheduling capabilities.
-
-The system needed to address several key business challenges: helping students better prepare for DMV exams through online practice tests with current content, streamlining the reservation process for driving lessons to reduce administrative overhead, and providing robust reporting tools to track business performance. The client emphasized the importance of staying current with DMV testing requirements and offering multiple training package options to meet different student needs.
-
-### What I Did Particularly Well
-
-I excelled at translating the client's business needs into clear, comprehensive UML diagrams that accurately represented system functionality. My use case diagram effectively captured all user roles and their interactions with the system, ensuring nothing from the client interview was overlooked. I also did well in designing workflows that addressed real pain points the client mentioned, such as the activity diagram for making reservations that eliminates manual schedule coordination and prevents double-booking.
-
-Additionally, I was thorough in addressing both functional requirements (what the system does) and nonfunctional requirements (how well it performs). I made sure to include security measures, accessibility features, and compliance considerations that the client might not have explicitly mentioned but are essential for a professional system handling sensitive customer data and payment information.
-
-### Area for Revision and Improvement
-
-If I could revise one part of my work, I would enhance the sequence diagram to include more error handling scenarios. While the current diagram shows the happy path where everything works correctly, real-world systems need to handle failures gracefully. I would add alternate flows showing what happens when the authentication service is unavailable, when the database connection fails, or when payment processing encounters an error.
-
-I would improve this by creating supplementary sequence diagrams for exception cases, showing how the system recovers from errors, provides meaningful feedback to users, and maintains data consistency even when operations fail partway through. This would demonstrate more mature thinking about system reliability and user experience beyond just the primary use cases.
-
-### Interpreting and Implementing User Needs
-
-I interpreted user needs by carefully analyzing the client interview transcript and identifying both explicit requests and implicit requirements. For example, when the client mentioned wanting to reduce failed driving exam attempts, I understood this meant the system needed comprehensive practice test functionality with progress tracking and performance analytics. When they expressed frustration with scheduling coordination, I designed an automated reservation system with real-time availability checking.
-
-I implemented these needs by creating specific use cases for each user role (student, instructor, secretary, IT officer, owner), designing workflows that eliminate the manual steps they complained about, building in the DMV integration they requested to keep content current, and including reporting capabilities that give the owner business insights without requiring IT support.
-
-Considering user needs is critical because systems that don't match how people actually work will fail regardless of how technically sophisticated they are. If we design a system based on what we think users need rather than listening to their actual requirements, we'll create software that's difficult to use, doesn't solve the real problems, and ultimately won't be adopted. The DriverPass client specifically mentioned competing with other driving schools - if our system doesn't make their business more efficient and help students succeed, it won't provide competitive advantage.
-
-### Software Design Approach
-
-I approach software design by starting with thorough requirements gathering through stakeholder interviews and documentation review. I believe in understanding the business problem before jumping into solutions. For DriverPass, I carefully reviewed the interview transcript multiple times, noting not just what they explicitly asked for but also pain points they mentioned that could be addressed through good design.
-
-My technique involves creating multiple UML diagrams to view the system from different angles - use cases show who does what, activity diagrams show workflow and business logic, sequence diagrams show component interaction, and class diagrams show data structure. Each diagram reveals different aspects of the system and helps identify gaps or inconsistencies in the design.
-
-In the future, I would continue using UML diagramming as it provides a standardized way to communicate design decisions. I would also incorporate prototyping earlier in the process - creating mockups of key interfaces and walking through them with stakeholders to validate that the design meets their needs before committing to full development. I would make more use of user stories written from the perspective of each user role to ensure I'm capturing all scenarios. Finally, I would emphasize iterative design, creating an initial design, gathering feedback, and refining rather than trying to perfect everything upfront.
-
-I also learned the importance of considering nonfunctional requirements from the beginning rather than treating them as afterthoughts. Security, performance, accessibility, and scalability need to be built into the architecture, not added later. For DriverPass, designing role-based access control from the start, planning for cloud deployment to ensure availability, and incorporating PCI-compliant payment processing were all crucial to creating a viable system.
-
----
-
-## Skills Demonstrated
-
-- Requirements gathering and analysis
-- UML diagramming (use case, activity, sequence, class diagrams)
-- System architecture design
-- Technical requirements specification
-- User-centered design thinking
-- Business process analysis
-- Stakeholder communication
-
----
-
-## Tools and Technologies
-
-- Lucidchart for UML diagram creation
-- Microsoft Word for documentation
-- GitHub for version control and portfolio management
-
----
-
-## About This Course
-
-CS-255 System Analysis and Design focused on the full lifecycle of analyzing business requirements and designing system solutions. The course emphasized understanding user needs, translating those needs into functional specifications, and creating technical designs that can be implemented by development teams.
-
----
-
-## Contact
-
-Isela Flores  
-Southern New Hampshire University  
-CS-255 System Analysis and Design  
-isela.flores@snhu.edu
-
----
-
-*This portfolio demonstrates my ability to analyze complex business requirements, design comprehensive system solutions, and communicate technical concepts clearly to both technical and non-technical stakeholders.*
+*This portfolio demonstrates skills in requirements analysis, UML modeling, system design, and technical documentation developed through the CS-255 course.*
